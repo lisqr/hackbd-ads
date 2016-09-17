@@ -3,12 +3,12 @@ import {AuthService} from '../services/AuthService';
 
 export class Register extends React.Component<{}, {}> {
 	register() {
-		var email = this.refs.email.value
-		var password = this.refs.password.value
+		// var email = this.refs.email.value
+		// var password = this.refs.password.value
 
-		AuthService.register(email, password).then(token => {
-			location.href= '/'
-		});
+		// AuthService.register(email, password).then(token => {
+		// 	location.href= '/'
+		// })
 	}
 
 	render() {

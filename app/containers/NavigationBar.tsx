@@ -6,7 +6,7 @@ interface NavigationBarState {
   email?: string
 }
 
-export class NavigationBar extends React.Component<{}, NavigationBarState> {
+export class NavigationBar extends React.Component<void, NavigationBarState> {
 
   constructor() {
     super()
@@ -16,7 +16,7 @@ export class NavigationBar extends React.Component<{}, NavigationBarState> {
   }
 
   componentDidMount() {
-    AuthService.getCurrentUser().then(user => {
+    AuthService.getCurrentUser().then((user: any) => {
       this.setState({
         email: user.email
       })
