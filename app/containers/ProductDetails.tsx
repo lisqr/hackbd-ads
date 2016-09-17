@@ -31,7 +31,7 @@ export class ProductDetails extends React.Component<any, any> {
     }
 
 		return (
-			<div className="container">
+			<div id='product-details'>
         <h1>Product Details</h1>
         <div>
           

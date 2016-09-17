@@ -1,0 +1,10 @@
+@import 'constants';
+
+#product-details {
+
+  position: fixed;
+  left: $sidebar-width;
+  right: 0;
+  width: calc(100% - $sidebar-width)
+
+}

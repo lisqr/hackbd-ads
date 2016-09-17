@@ -27,20 +27,20 @@ export class ProductList extends React.Component<ProductListProps, ProductListSt
 
   render() {
 		return (
-			<div className='container' id='product-list'>
+			<div id='product-list'>
         <h1>Your Products</h1>
         <hr />
         {this.state.products.map(product => {
           if (this.state.selectedProduct != null && product.skuNumber == this.state.selectedProduct.skuNumber) {
             return (
               <div key={product.skuNumber} onClick={() => this.props.onProductClick(product)}>
-                <h1>{product.title}</h1>
+                <h2>{product.title}</h2>
               </div>
             )
           } else {
             return (
               <div key={product.skuNumber} onClick={() => this.props.onProductClick(product)}>
-                <h3>{product.title}</h3>
+                <h4>{product.title}</h4>
               </div>
             )
           }

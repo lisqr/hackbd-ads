@@ -8,8 +8,8 @@ import {Footer} from './containers/Footer'
 import {About} from './containers/About'
 // import {Login} from './containers/Login'
 import {Dashboard} from './containers/Dashboard'
-// import 'bootstrap-loader'
-// import '!style!css!sass!./styles/main.scss'
+import 'bootstrap-loader'
+import '!style!css!sass!./styles/main.scss'
 
 class App extends React.Component<any, any> {
 
@@ -17,10 +17,10 @@ class App extends React.Component<any, any> {
     return (
       <div>
         <NavigationBar />
+        <div style={{height: '3em'}} />
         <div>
           { this.props.children }
         </div>
-        <Footer />
       </div>
     )
   }

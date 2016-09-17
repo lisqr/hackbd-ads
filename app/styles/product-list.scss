@@ -1,0 +1,11 @@
+@import 'constants';
+
+#product-list {
+
+  position: fixed;
+  left: 0;
+  width: $sidebar-width;
+  height: 100%;
+  overflow: auto;
+
+}

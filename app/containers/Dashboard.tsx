@@ -34,9 +34,9 @@ export class Dashboard extends React.Component<void, DashboardState> {
 
   render() {
 		return (
-			<div className="container">
+			<div>
         <h1>Dashboard</h1>
-        <hr />v
+        <hr />
         <ProductList products={this.state.products}
                      selectedProduct={this.state.selectedProduct}
                      onProductClick={(product: Product) => this.onProductClick(product)} />

@@ -15,7 +15,7 @@ export class UploadAd extends React.Component<any, any> {
 
   render() {
 		return (
-			<div className="container">
+			<div>
         <h1>Upload Ad for {this.props.name}</h1>
         <label className="label">Import file</label>
         <p className="control">
