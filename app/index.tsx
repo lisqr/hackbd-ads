@@ -9,7 +9,7 @@ import {About} from './containers/About'
 // import {Login} from './containers/Login'
 import {Dashboard} from './containers/Dashboard'
 // import 'bootstrap-loader'
-import '!style!css!sass!./styles/main.scss'
+// import '!style!css!sass!./styles/main.scss'
 
 class App extends React.Component<any, any> {
 
