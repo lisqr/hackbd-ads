@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as Axios from 'axios'
+import axios from '../axios'
 import {Product} from '../interfaces/Product'
 import {ProductList} from './ProductList'
 import {ProductDetails} from './ProductDetails'
@@ -19,7 +19,7 @@ export class Dashboard extends React.Component<void, DashboardState> {
   }
 
   componentDidMount() {
-    Axios.get('/products/?query=wood')
+    axios.get('/products/?query=wood')
   }
 
   render() {
