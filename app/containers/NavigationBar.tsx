@@ -71,7 +71,7 @@ export class NavigationBar extends React.Component<void, NavigationBarState> {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <Link to="/" className="navbar-brand">Generic-web</Link>
+            <Link to="/" className="navbar-brand">BuildDirect Ads</Link>
           </div>
           <div id="navbar" className="navbar-collapse collapse">
             <ul className="nav navbar-nav navbar-right">

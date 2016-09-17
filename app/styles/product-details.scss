@@ -1,10 +1,21 @@
 @import 'constants';
 
 #product-details {
-
+  padding: 0 2em 2em 2em;
   position: fixed;
   left: $sidebar-width;
   right: 0;
-  width: calc(100% - $sidebar-width)
+  width: calc(100% - $sidebar-width);
+  height: 100%;
+  overflow: auto;
+}
 
+.flex-item {
+    display:flex;
+    align-items: center;
+}
+
+.flex-item img{
+    flex-grow:0;
+    flex-shrink:0;
 }

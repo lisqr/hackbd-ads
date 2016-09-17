@@ -16,7 +16,7 @@ export class UploadAd extends React.Component<any, any> {
   render() {
 		return (
 			<div>
-        <h1>Upload Ad for {this.props.name}</h1>
+        <h2>Upload Ad for {this.props.name}</h2>
         <label className="label">Import file</label>
         <p className="control">
           <input className="input" type="file" accept=".gif,.jpg,.jpeg,.png,.pdf,.psd,.ai" />
