@@ -1,0 +1,52 @@
+#home {
+  #hero {
+    display: flex;
+    background-image: url('../images/space.jpg');
+    background-size: cover;
+    height: 55em;
+    color: white;
+    padding-top: 37em;
+    justify-content: center;
+  }
+
+  #hero-contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .horizontal-buttons {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  #side-image {
+    background-image: url('../images/space.jpg');
+    background-size: cover;
+    height: 30em;
+  }
+
+  #side-text {
+    display: flex;
+    align-items: center;
+    height: 30em;
+    padding: 3em;
+  }
+
+  #what-we-offer {
+    height: 20em;
+    padding: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #sign-up {
+    height: 20em;
+    padding: 3em;
+    padding-bottom: 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
