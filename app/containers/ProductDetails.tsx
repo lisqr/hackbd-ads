@@ -1,43 +1,46 @@
 import * as React from 'react'
 import {UploadAd} from './UploadAd'
 import {axios} from '../axios'
+import {Product} from '../interfaces/Product'
 
-export class ProductDetails extends React.Component<any, any> {
+interface ProductDetailsProps {
+  selectedProduct: Product,
+}
+
+interface ProductDetailsState {
+  isFileUploaded: boolean,
+  file: any
+}
+
+export class ProductDetails extends React.Component<ProductDetailsProps, ProductDetailsState> {
   constructor() {
     super()
     this.state = {
-      productDetails: {}
+      isFileUploaded: false,
+      file: null
     }
-  }
-
-  componentDidMount() {
-    var self = this
-    axios.get('/products/10089623') // should be getting the SKU from props
-      .then(function(res: any) {
-        console.log(res)
-        console.log("success")
-        self.setState({productDetails: res.data.data})
-      })
-      .catch(function() {
-        console.error("error")
-      })
   }
 
   render() {
-    var details = this.state.productDetails;
-    console.log("deets", details)
-    for (var prop in details) {
-      console.log("obj." + prop + " = " + details[prop])
-    }
+    if (this.props && this.props.selectedProduct) {
+      var details = this.props.selectedProduct;
+      console.log("deets", details)
 
-		return (
-			<div id='product-details'>
-        <h1>Product Details</h1>
-        <div>
-          
+      return (
+        <div id='product-details'>
+          <h1>Product Details</h1>
+          <div>
+            
+          </div>
+          <UploadAd name={details.title}/>
         </div>
-        <UploadAd name={details.productItemName}/>
-			</div>
-		)
-	}
+      )
+    } else {
+      return (
+        <div id='product-details'>
+          <h1>Select a product to begin</h1>
+        </div>
+      )
+    }
+  }
 }

@@ -1,5 +1,12 @@
+interface MainImage {
+  alt: string,
+  thumbnails: Array<any>,
+  url: string
+}
+
 export interface Product {
-  image: string,
+  mainImage: MainImage,
+  images: Array<string>,
   overallRating: number,
   skuNumber: number,
   price: number,
