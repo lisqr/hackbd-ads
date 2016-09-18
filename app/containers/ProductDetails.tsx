@@ -64,7 +64,7 @@ export class ProductDetails extends React.Component<ProductDetailsProps, Product
     } else {
       return (
         <div id='product-details'>
-          <h1>Select a product to begin</h1>
+          <h3 id='select-to-begin'>Select a product to begin</h3>
         </div>
       )
     }
