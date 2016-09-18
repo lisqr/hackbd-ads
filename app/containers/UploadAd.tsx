@@ -17,6 +17,7 @@ export class UploadAd extends React.Component<UploadAdProps, any> {
   }
 
   generateSignature(callback: any, params_to_sign: any){
+    console.log(params_to_sign);
     $.ajax({
       url     : "http://www.my-domain.com/my_generate_signature %>",
       type    : "GET",
@@ -34,16 +35,17 @@ export class UploadAd extends React.Component<UploadAdProps, any> {
       cloudinary.openUploadWidget({ 
         cloud_name: config.cloudinaryName, 
         api_key: config.cloudinaryApiKey,
-        upload_preset: config.cloudinaryPreset,
-        upload_signature: this.generateSignature}, 
-        function(error, result) {
+        upload_preset: config.cloudinaryPreset
+        // upload_signature: this.generateSignature
+      }, (error, result) => {
+          console.log(error, result)
           if (error) {
             return console.error(error)
           }
-          console.log(error, result)
           const imageUrl = result[0].url
-          localhostAxios.post(`/product/${this.props.sku}/image?imageUrl=${imageUrl}?bdUrl=${this.props.bdUrl}`)
-        });
+          localhostAxios.post(`/product/${this.props.sku}/image?imageUrl=${imageUrl}&bdUrl=${this.props.bdUrl}`)
+        }
+      )
     }, false);
   }
 
