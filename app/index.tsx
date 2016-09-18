@@ -30,7 +30,7 @@ class App extends React.Component<any, any> {
 ReactDOM.render((
   <Router history={browserHistory}>
     <Route path="/" component={App}>
-      <IndexRoute component={Home} />
+      <IndexRoute component={Dashboard} />
       <Route path="/about" component={About} />
       {/*<Route path="/login" component={Login} />*/}
       <Route path="/dashboard" component={Dashboard} />

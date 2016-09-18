@@ -11,6 +11,10 @@ export class AdDetails extends React.Component<AdDetailsProps, any> {
     super()
   }
 
+  getCTR(clicks: number, hits: number) {
+    return (isNaN(clicks/hits) ? 0 : clicks/hits)
+  }
+
   render() {
     if (!this.props.productAd) {
       return (
@@ -19,13 +23,21 @@ export class AdDetails extends React.Component<AdDetailsProps, any> {
         </div>
       )
     } else {
+      const ad = this.props.productAd
+
       console.log(this.props.productAd)
       return (
         <div>
-          <p>Image url: {this.props.productAd.imageUrl}</p>
-          <p>BD url: {this.props.productAd.bdUrl}</p>
-          <p>Hits: {this.props.productAd.hitCount}</p>
-          <p>Clicks: {this.props.productAd.clickCount}</p>
+
+          <div>
+            <img src={ad.imageUrl} className="img-fluid" style={{maxWidth: '728px'}} />
+            <div>
+            <h4>Stats for Active Ad</h4>
+              <p><strong>Hits</strong>  {ad.hitCount}</p>
+              <p><strong>Clicks</strong>  {ad.clickCount}</p>
+              <p><strong>Click Through Rate</strong>  {this.getCTR(ad.clickCount, ad.hitCount)}</p>
+            </div>
+          </div>
         </div>
       )
     }

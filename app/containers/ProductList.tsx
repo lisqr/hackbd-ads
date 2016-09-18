@@ -22,7 +22,7 @@ export class ProductList extends React.Component<ProductListProps, void> {
           if (this.props.selectedProduct != null && product.skuNumber == this.props.selectedProduct.skuNumber) {
             return (
               <div key={product.skuNumber} onClick={() => this.props.onProductClick(product)}>
-                <h2>{product.title}</h2>
+                <h4 className="selected">{product.title}</h4>
               </div>
             )
           } else {

@@ -54,7 +54,7 @@ export class NavigationBar extends React.Component<void, NavigationBarState> {
           </li>
           <li>
             <p className='navbar-btn'>
-              <Link to="/register" className='btn btn-primary' style={{ marginRight: '2em' }}>Register</Link>
+              <a href="https://www.builddirect.com/" className='btn btn-primary' style={{ marginRight: '2em' }}>Back to BuildDirect</a>
             </p>
           </li>
         </ul>
@@ -71,7 +71,7 @@ export class NavigationBar extends React.Component<void, NavigationBarState> {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <Link to="/" className="navbar-brand">BuildDirect Ads</Link>
+            <Link to="/" className="navbar-brand">BuildDirect Supplier Ads</Link>
           </div>
           <div id="navbar" className="navbar-collapse collapse">
             <ul className="nav navbar-nav navbar-right">

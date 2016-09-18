@@ -49,8 +49,16 @@ export class ProductDetails extends React.Component<ProductDetailsProps, Product
             </dl>
           </div>
           <hr />
-          <UploadAd name={details.title} sku={details.skuNumber} bdUrl={details.url} />
-          <AdDetails productAd={this.props.selectedProductAd} />
+          <div className="panel panel-default center" style={{maxWidth: '800px'}}>
+            <div className="panel-heading">
+              <h2 className="panel-title">Ad for this Product</h2>
+            </div>
+            <div className="panel-body">
+              <AdDetails productAd={this.props.selectedProductAd} />
+              <hr />
+              <UploadAd name={details.title} sku={details.skuNumber} bdUrl={details.url} />
+            </div>
+          </div>
         </div>
       )
     } else {

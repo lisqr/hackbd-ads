@@ -52,9 +52,9 @@ export class UploadAd extends React.Component<UploadAdProps, any> {
   render() {
 		return (
 			<div>
-        <h3>Upload Ad for {this.props.name}</h3>
-        <button id="upload_widget_opener" type="button" className="btn btn-default">Upload ad images</button>
-        
+        <h4>Upload Ad for {this.props.name}</h4>
+        <p>We currently support banner ads of size 728 x 90.</p>
+        <button id="upload_widget_opener" type="button" className="btn btn-primary">Upload</button>
 			</div>
 		)
 	}
