@@ -1,12 +1,13 @@
 import * as React from 'react'
-import {buildDirectAxios} from '../axios'
-import {Product} from '../interfaces/Product'
+import {buildDirectAxios, localhostAxios} from '../axios'
+import {Product, ProductAd} from '../interfaces/Product'
 import {ProductList} from './ProductList'
 import {ProductDetails} from './ProductDetails'
 
 interface DashboardState {
   products: Array<Product>,
-  selectedProduct?: Product
+  selectedProduct?: Product,
+  selectedProductAd?: ProductAd
 }
 
 export class Dashboard extends React.Component<void, DashboardState> {
@@ -14,7 +15,8 @@ export class Dashboard extends React.Component<void, DashboardState> {
     super()
     this.state = {
       products: [],
-      selectedProduct: null
+      selectedProduct: null,
+      selectedProductAd: null
     }
   }
 
@@ -29,21 +31,23 @@ export class Dashboard extends React.Component<void, DashboardState> {
   }
 
   onProductClick(selectedProduct: Product) {
-    this.setState({
-      products: this.state.products,
-      selectedProduct: selectedProduct
+    localhostAxios.get(`/product/${selectedProduct.skuNumber}`).then((response: any) => {
+      this.setState({
+        products: this.state.products,
+        selectedProduct: selectedProduct,
+        selectedProductAd: response.data
+      })
     })
+    
   }
 
   render() {
 		return (
 			<div>
-        <h1>Dashboard</h1>
-        <hr />
         <ProductList products={this.state.products}
                      selectedProduct={this.state.selectedProduct}
                      onProductClick={(product: Product) => this.onProductClick(product)} />
-        <ProductDetails selectedProduct={this.state.selectedProduct} />
+        <ProductDetails selectedProduct={this.state.selectedProduct} selectedProductAd={this.state.selectedProductAd} />
 
 			</div>
 		)

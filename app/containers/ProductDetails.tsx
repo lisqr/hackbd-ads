@@ -1,10 +1,12 @@
 import * as React from 'react'
 import {UploadAd} from './UploadAd'
 import {buildDirectAxios} from '../axios'
-import {Product} from '../interfaces/Product'
+import {AdDetails} from './AdDetails'
+import {Product, ProductAd} from '../interfaces/Product'
 
 interface ProductDetailsProps {
   selectedProduct: Product,
+  selectedProductAd: ProductAd
 }
 
 interface ProductDetailsState {
@@ -48,6 +50,7 @@ export class ProductDetails extends React.Component<ProductDetailsProps, Product
           </div>
           <hr />
           <UploadAd name={details.title} sku={details.skuNumber} bdUrl={details.url} />
+          <AdDetails productAd={this.props.selectedProductAd} />
         </div>
       )
     } else {

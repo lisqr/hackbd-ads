@@ -1,28 +1,31 @@
 import * as React from 'react'
-import {buildDirectAxios} from '../axios'
+import {ProductAd} from '../interfaces/Product'
+import {localhostAxios} from '../axios'
 
-export class AdDetails extends React.Component<any, any> {
+interface AdDetailsProps {
+  productAd?: ProductAd
+}
+
+export class AdDetails extends React.Component<AdDetailsProps, any> {
   constructor() {
     super()
-    this.state = {
-      ad: {}
-    }
-  }
-
-  componentDidMount() {
-    console.log(this.props);
   }
 
   render() {
-		return (
-			<div>
-        <h2>Ad Details</h2>
-        <ul class="nav nav-pills">
-        <li role="presentation" class="active"><a href="#">Active Ads</a></li>
-        <li role="presentation"><a href="#">Get Links</a></li>
-        <li role="presentation"><a href="#">Upload New Ad</a></li>
-      </ul>
-			</div>
-		)
+    if (!this.props.productAd) {
+      return (
+        <div>
+          <h3>No ad uploaded yet</h3>
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          <p>Image url: {this.props.productAd.imageUrl}</p>
+          <p>BD url: {this.props.productAd.bdUrl}</p>
+          <p>Hits: {this.props.productAd.hitCount}</p>
+        </div>
+      )
+    }
 	}
 }
