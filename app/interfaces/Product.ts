@@ -20,5 +20,6 @@ export interface Product {
 export interface ProductAd {
   imageUrl: string,
   bdUrl: string,
-  hitCount: number
+  hitCount: number,
+  clickCount: number
 }

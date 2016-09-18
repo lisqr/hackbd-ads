@@ -19,11 +19,13 @@ export class AdDetails extends React.Component<AdDetailsProps, any> {
         </div>
       )
     } else {
+      console.log(this.props.productAd)
       return (
         <div>
           <p>Image url: {this.props.productAd.imageUrl}</p>
           <p>BD url: {this.props.productAd.bdUrl}</p>
           <p>Hits: {this.props.productAd.hitCount}</p>
+          <p>Clicks: {this.props.productAd.clickCount}</p>
         </div>
       )
     }
