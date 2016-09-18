@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {axios} from '../axios'
+import {buildDirectAxios} from '../axios'
 
 export class AdDetails extends React.Component<any, any> {
   constructor() {

@@ -1,8 +1,14 @@
 import * as React from 'react'
-import {axios} from '../axios'
+import {buildDirectAxios, localhostAxios} from '../axios'
 const config = require('json!../../config.json')
 
-export class UploadAd extends React.Component<any, any> {
+interface UploadAdProps {
+  name: string,
+  sku: string,
+  bdUrl: string
+}
+
+export class UploadAd extends React.Component<UploadAdProps, any> {
   constructor() {
     super()
     this.state = {
@@ -24,17 +30,19 @@ export class UploadAd extends React.Component<any, any> {
 
   componentDidMount() {
     console.log(this.props);
-    var self = this;
-    document.getElementById("upload_widget_opener").addEventListener("click", function() {
+    document.getElementById("upload_widget_opener").addEventListener("click", () => {
       cloudinary.openUploadWidget({ 
         cloud_name: config.cloudinaryName, 
         api_key: config.cloudinaryApiKey,
         upload_preset: config.cloudinaryPreset,
         upload_signature: this.generateSignature}, 
-        function(error, result) { 
+        function(error, result) {
+          if (error) {
+            return console.error(error)
+          }
           console.log(error, result)
-          var imageUrl = result[0].url
-          axios.post(`http://localhost:444/product/${self.props.sku}?imageUrl=${imageUrl}`)
+          const imageUrl = result[0].url
+          localhostAxios.post(`/product/${this.props.sku}/image?imageUrl=${imageUrl}?bdUrl=${this.props.bdUrl}`)
         });
     }, false);
   }

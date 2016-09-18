@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {axios} from '../axios'
+import {buildDirectAxios} from '../axios'
 import {Product} from '../interfaces/Product'
 import {ProductList} from './ProductList'
 import {ProductDetails} from './ProductDetails'
@@ -19,7 +19,7 @@ export class Dashboard extends React.Component<void, DashboardState> {
   }
 
   componentDidMount() {
-    axios.get('/products/?query=wood').then((response: any) => {
+    buildDirectAxios.get('/products/?query=wood').then((response: any) => {
     // axios.get('/seller/products?apikey=bd441e305681cf6d28f42362c0e84c8335d95972b72e7c7adc1db4ebafa6388e').then((response: any) => {
       const products = response.data.data.products
       // const products = response.data.data

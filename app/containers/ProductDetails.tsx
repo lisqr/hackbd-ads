@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {UploadAd} from './UploadAd'
-import {axios} from '../axios'
+import {buildDirectAxios} from '../axios'
 import {Product} from '../interfaces/Product'
 
 interface ProductDetailsProps {
@@ -47,7 +47,7 @@ export class ProductDetails extends React.Component<ProductDetailsProps, Product
             </dl>
           </div>
           <hr />
-          <UploadAd name={details.title} sku={details.skuNumber} />
+          <UploadAd name={details.title} sku={details.skuNumber} bdUrl={details.url} />
         </div>
       )
     } else {
