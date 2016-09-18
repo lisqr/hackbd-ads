@@ -47,7 +47,7 @@ export class ProductDetails extends React.Component<ProductDetailsProps, Product
             </dl>
           </div>
           <hr />
-          <UploadAd name={details.title}/>
+          <UploadAd name={details.title} sku={details.skuNumber} />
         </div>
       )
     } else {
